@@ -9,8 +9,12 @@ img {
   width: 100%;
 }
 
+html,
 body {
+  /* display: flex; */
+  /* flex-direction: column; */
   background: blanchedalmond;
+  min-height: 100vh;
 }
 
 /* ---------------- Header ---------------- */
@@ -37,6 +41,42 @@ header input {
   margin-top: 10px;
   font-family: "Montserrat", sans-serif;
   outline: none;
+}
+
+/* ---------------- Блок селектор фильтра ------------ */
+nav {
+  /* display: flex; */
+  float: left;
+  width: 90%;
+  margin-top: 50px;
+  text-align: center;
+}
+
+nav span {
+  display: inline-block;
+  /* flex-wrap: nowrap; */
+  margin: 0 20px;
+  cursor: pointer;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 16px;
+  /* Выравниваем по центру (по вертикали), указываем line-height = height*/
+  /* line-height: 30px; */
+  /* background: #e79e6d; */
+  background: #a52323;
+  border: 2px solid coral;
+  font-weight: 600;
+  color: cornsilk;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+
+nav span:hover {
+  cursor: pointer;
+  background: #cc1f1f;
+  transform: translateY(2px) translateX(2px);
+  /* background: #e43f3f; */
 }
 
 /* ---------------- Main ---------------- */
@@ -242,12 +282,15 @@ aside {
 
 /* ---------------- Footer ---------------- */
 footer {
-  background: #a52323;
+  position: fixed;
+  bottom: 0;
   padding: 20px 5%;
+
   width: 90%;
   border-top: 5px solid coral;
+  background: #a52323;
+  color: cornsilk;
   text-align: center;
   /* font-family: "Pushster", cursive; */
   /* font-size: 15px; */
-  color: cornsilk;
 }

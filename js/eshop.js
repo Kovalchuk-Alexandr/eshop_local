@@ -108,3 +108,32 @@ function changeCountItems(action, id) {
     }
     updateShopCart();
 }
+
+// Работа с навигацией (фильтр товаров)
+const navItem = document.querySelectorAll("nav span")
+navItem.forEach(el => {
+    el.addEventListener("click", () => {
+        // console.log(el.classList.value)
+        // очищаем содержимое блока 'main' при нажатии на кнопку фильтра
+        mainBlock.innerHTML = ''
+        items.forEach(item => {
+            
+            if (el.classList.value == item.category || el.classList.value == 'all') {
+                // console.log(el.classList.value)
+                // console.log(item.category)
+                mainBlock.innerHTML += `<div class="item" onclick="projectDetails(${item.id})">
+                    <a href="./product.html?id=${item.id}"> <img src="./img/${item.img}" alt="" ></a>
+                    <h4>${item.name} - $ ${item.price}</h4>
+                    <p>${item.desc}</p>
+                    <div class="add-to-cart" onclick="addToCart(${item.id})"><i class="fa-solid fa-cart-plus"></i></div>
+                </div>`;
+            }
+        })
+    })
+})
+
+// Сохраняем 'id' выбранного проекта, для последующего использования в "подробно"
+function projectDetails(id) {
+     
+    localStorage.setItem('projectId', id);
+ }
