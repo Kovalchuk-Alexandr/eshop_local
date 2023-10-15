@@ -7,4 +7,4 @@ git remote add origin https://github.com/Kovalchuk-Alexandr/eshop_local.git
 git push -u origin master
 
 
-https://kovalchuk-alexandr.github.io/freelanceportfolio/
+https://kovalchuk-alexandr.github.io/eshop_local/
